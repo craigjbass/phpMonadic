@@ -111,6 +111,9 @@ class MonadicShover {
         return $this;
     }
 
+    /**
+     * @return Monadic|void
+     */
     public function retrn()
     {
 

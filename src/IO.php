@@ -14,6 +14,8 @@ class IO extends Monadic
             $this->value = $value;
         } else if ( $value === null ) {
             $this->value = null;
+        } else if ( $value instanceof Closure ) {
+            $this->value = $value;
         } else {
             throw new Exception();
         }
@@ -26,6 +28,14 @@ class IO extends Monadic
     protected function _shove()
     {
         return function( IO $io ) {
+
+            $value = $io->value;
+
+            if( $io->value instanceof \Closure ) {
+
+                return $value();
+            }
+
             return $io->value;
         };
     }

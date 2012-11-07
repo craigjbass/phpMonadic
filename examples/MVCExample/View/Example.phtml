@@ -1,0 +1,24 @@
+<h1>
+    <?= $this->title ?>
+</h1>
+<ul>
+    <?php foreach( $this->availableIds as $id ): ?>
+        <li>
+            <a href="?id=<?= $id ?>"><?= $id ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<?php if( isset( $this->theThing ) ): ?>
+    <p>
+        <?= $this->theThing['name']; ?>
+    </p>
+    <?php if( $this->theThing['expand'] === true ) : ?>
+        <h2>
+            <?= $this->theThing['id'] ?>'s Aggregate Data
+        </h2>
+        <p>
+            <?php $this->aggregateData(); ?>
+        </p>
+    <?php endif; ?>
+<?php endif; ?>
+
