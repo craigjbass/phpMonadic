@@ -51,7 +51,7 @@ abstract class Monadic
      * @return $this
      * @throws Exception
      */
-    public function execute()
+    public function evaluate()
     {
         $shove = $this->_shove();
         $_retrn = $this->_retrn();

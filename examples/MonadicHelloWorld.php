@@ -15,4 +15,4 @@ $io = $io
 
 $ioAction = IO::out( $io );
 
-$ioAction->execute();
+$ioAction->evaluate();
