@@ -14,7 +14,7 @@ abstract class Monadic
 
     abstract protected function _shove();
 
-    abstract protected function _return();
+    abstract protected function _retrn();
 
     /**
      *
@@ -54,7 +54,7 @@ abstract class Monadic
     public function execute()
     {
         $shove = $this->_shove();
-        $return = $this->_return();
+        $_retrn = $this->_retrn();
 
         $workingValue = $shove( $this );
 
@@ -75,7 +75,7 @@ abstract class Monadic
 
         }
 
-        return $return( $workingValue );
+        return $_retrn( $workingValue );
 
     }
 

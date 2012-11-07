@@ -33,7 +33,7 @@ class IO extends Monadic
     /**
      * @return \Closure
      */
-    protected function _return()
+    protected function _retrn()
     {
         return function( $value ) {
             return new self( $value );
